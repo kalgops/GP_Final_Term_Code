@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Processing - Main Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+    .controls {
+      background: #fff;
+      padding: 10px;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .controls > div {
+      margin-right: 20px;
+    }
+    .controls label {
+      margin-right: 10px;
+    }
+    /* Center the canvas container */
+    #canvasContainer {
+      max-width: 1100px; 
+      margin: 0 auto;
+      padding: 20px 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP CONTROL PANEL -->
+  <div class="controls">
+    <div>
+      <label><input type="checkbox" id="chkRealtime"> Real-Time Mode</label>
+      <label><input type="checkbox" id="chkFaceDetect" checked> Face Detection</label>
+    </div>
+    <div>
+      <label>Face Filter Mode:
+        <select id="selFaceFilter">
+          <option value="0">None</option>
+          <option value="1">Grayscale</option>
+          <option value="2">Blur</option>
+          <option value="3">HSV</option>
+          <option value="4">Pixelate</option>
+        </select>
+      </label>
+    </div>
+    <!-- Labeled sliders for row 3 thresholds (R/G/B) -->
+    <div>
+      <label>Threshold R:
+        <input type="range" id="sliderRed" min="0" max="255" value="128">
+      </label>
+      <label>Threshold G:
+        <input type="range" id="sliderGreen" min="0" max="255" value="128">
+      </label>
+      <label>Threshold B:
+        <input type="range" id="sliderBlue" min="0" max="255" value="128">
+      </label>
+    </div>
+    <!-- Labeled sliders for row 5 thresholds (HSV/YCbCr) -->
+    <div>
+      <label>Threshold HSV:
+        <input type="range" id="sliderHSV" min="0" max="765" value="382">
+      </label>
+      <label>Threshold YCbCr:
+        <input type="range" id="sliderYCbCr" min="0" max="765" value="382">
+      </label>
+    </div>
+    <div>
+      <button id="btnDownload">Download Grid</button>
+      <!-- Button to go to the second page (Extensions) -->
+      <button id="btnExtensions">View Extensions</button>
+    </div>
+  </div>
+
+  <!-- Canvas container -->
+  <div id="canvasContainer"></div>
+
+  <!-- p5.js libraries -->
+  <script src="assets/P5/p5.min.js"></script>
+  <script src="assets/P5/p5.sound.min.js"></script>
+  <!-- ml5.js -->
+  <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+  <!-- Main Code -->
+  <script src="index.js"></script>
+</body>
+</html>

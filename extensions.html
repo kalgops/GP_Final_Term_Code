@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Processing - Extensions</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+    .controls {
+      background: #fff;
+      padding: 10px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+    }
+    #canvasContainer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 0;
+      display: block;
+    }
+    .controls > div {
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <div>
+      <button id="btnBack">Back to Main</button>
+    </div>
+    <div>
+      <label>Morph Iterations:
+        <input type="range" id="morphIter" min="1" max="3" value="1">
+      </label>
+    </div>
+  </div>
+
+  <div id="canvasContainer"></div>
+
+  <!-- p5 & ml5 -->
+  <script src="assets/P5/p5.min.js"></script>
+  <script src="assets/P5/p5.sound.min.js"></script>
+  <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+  <!-- Our extension code -->
+  <script src="extensions.js"></script>
+</body>
+</html>
